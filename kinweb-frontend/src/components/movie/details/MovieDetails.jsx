@@ -12,6 +12,7 @@ import {
 } from "../../../utils/Util";
 import DetailsTabs from "../../tabs/DetailsTabs";
 import WatchlistButton from "../../watchlist/WatchlistButton";
+import DeleteMediaButton from "../../media/DeleteMediaButton";
 
 export default function MovieDetails() {
   const { id } = useParams();
@@ -135,12 +136,22 @@ export default function MovieDetails() {
               writersAsText={concatWriterNames(movie.writers, ", ", 3)}
             />
 
-            <div className="mt-12">
+            <div className="flex flex-row mt-12">
               <WatchlistButton
                 visible={sessionData.isLoggedIn}
                 media={movie}
                 mediaType={"movie"}
               />
+              <div className="ml-5">
+                <DeleteMediaButton
+                  visible={
+                    sessionData.isLoggedIn &&
+                    sessionData.user.role === "ADMINISTRATOR"
+                  }
+                  media={movie}
+                  mediaType={"movie"}
+                />
+              </div>
             </div>
           </div>
         </div>

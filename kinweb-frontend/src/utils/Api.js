@@ -78,3 +78,13 @@ export function deleteCritique(id) {
   });
 }
 
+export function deleteMovie(id) {
+  return axios.delete(BASE_URL + `/api/movies/${id}`, {
+    withCredentials: true,
+  });
+}
+export function deleteShow(id) {
+  return axios.delete(BASE_URL + `/api/tv/${id}`, {
+    withCredentials: true,
+  });
+}

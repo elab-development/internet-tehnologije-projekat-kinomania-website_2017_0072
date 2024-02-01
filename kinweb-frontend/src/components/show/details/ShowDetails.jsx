@@ -11,6 +11,7 @@ import {
 } from "../../../utils/Util";
 import WatchlistButton from "../../watchlist/WatchlistButton";
 import DetailsTabs from "../../tabs/DetailsTabs";
+import DeleteMediaButton from "../../media/DeleteMediaButton";
 
 export default function ShowDetails() {
   const { id } = useParams();
@@ -134,12 +135,22 @@ export default function ShowDetails() {
               numberOfSeasons={show.number_of_seasons}
             />
 
-            <div className="mt-12">
+            <div className="flex flex-row mt-12">
               <WatchlistButton
                 visible={sessionData.isLoggedIn}
                 media={show}
                 mediaType={"tv_show"}
               />
+              <div className="ml-5">
+                <DeleteMediaButton
+                  visible={
+                    sessionData.isLoggedIn &&
+                    sessionData.user.role === "ADMINISTRATOR"
+                  }
+                  media={show}
+                  mediaType={"tv_show"}
+                />
+              </div>
             </div>
           </div>
         </div>
