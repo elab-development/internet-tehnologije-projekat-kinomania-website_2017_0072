@@ -8,6 +8,7 @@ Before you begin, ensure you have met the following requirements:
 - You have MySQL Server 8.0 or higher.
 - You have Apache Maven 3.9.3 or higher.
 - Your MySQL DBMS has two databases - one for production and another one for testing purposes.
+- You have installed Node.js 18.14.2.
 
 ## Setting Up
 
@@ -20,18 +21,18 @@ Before you begin, ensure you have met the following requirements:
 1. Change the following property values in `application.properties` and `application-test.properties` to reflect your database parameters:
     - `spring.datasource.url`
     - `spring.datasource.username`
-    - `spring.datasource.password`
+    - `spring.datasource.password`<br />  
    Update these properties with the credentials of your production database in `application.properties`, and with your testing database in `application-test.properties`.
 
 2. Position yourself in the `kinweb-backend` folder with the command prompt, and type `mvn flyway:migrate` to initialize the structure of your production database.
 
 ## Running the Backend
 
-You can start the backend of the website either by running it in the IDE with `--seed` as its argument, or by positioning yourself in the recently created target folder with the command prompt and typing `java -jar kinomania-website-backend-0.0.1-SNAPSHOT.jar --seed`. This starts your backend and runs a seeder before starting the app that creates a `kinweb-images` folder in your C drive, and starts downloading movie and shows data from "https://www.themoviedb.org/" and populates your database tables with their JSON data, and the `kinweb-images` folder with image data. Note, you only need to pass `--seed` the first time you run the backend. Every other time you either run it in the IDE without any arguments, or by typing `java -jar kinomania-website-backend-0.0.1-SNAPSHOT.jar` in the command prompt. This is so that your production database doesn't get overwritten.
+You can start the backend of the website either by running it in the IDE with `--seed` as its argument, or by positioning yourself in the recently created target folder with the command prompt and typing `java -jar kinomania-website-backend-0.0.1-SNAPSHOT.jar --seed`. This starts your backend and runs a seeder before starting the app that creates a `kinweb_images` folder in your C drive, and starts downloading movies and shows data from "https://www.themoviedb.org/" and populates your database tables with their JSON data, and the `kinweb_images` folder with image data. Note, you only need to pass `--seed` the first time you run the backend. Every other time you either run it in the IDE without any arguments, or by typing `java -jar kinomania-website-backend-0.0.1-SNAPSHOT.jar` in the command prompt. This is so that your production database doesn't get overwritten.
 
 ## Configuring the Frontend
 
-After configuring the backend, position yourself in the `kinweb-frontend` folder with the command prompt and type `mvn install`. This will install all necessary dependencies for the frontend.
+After configuring the backend, position yourself in the `kinweb-frontend` folder with the command prompt and type `npm install`. This will install all necessary dependencies for the frontend.
 
 ## Running the Website
 
