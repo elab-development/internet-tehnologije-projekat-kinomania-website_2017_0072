@@ -127,8 +127,11 @@ export default function MovieDetails() {
               </span>
               <span className="mx-2">|</span>
               <span>{movie.release_date}</span>
-              <span className="mx-2">|</span>
+              <span className="mx-2">|</span>              
               <span>{concatGenreNames(movie.genres, ", ")}</span>
+              <span className="mx-2">|</span>
+              <span>{movie.length} min</span>
+              
             </div>
             <p className="text-onyx-contrast mt-8">{movie.description}</p>
             <MovieTabs
