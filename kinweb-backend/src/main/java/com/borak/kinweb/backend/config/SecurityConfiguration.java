@@ -112,6 +112,19 @@ public class SecurityConfiguration {
                         "/api/persons/**",
                         "/api/countries/**",
                         "/images/**"
+                ).permitAll().requestMatchers(
+                        "/api/docs",
+                        "/api/docs/**",
+                        "/api/swagger-ui/**",
+                        "/v3/api-docs",
+                        "/v3/api-docs/**",
+                        "/swagger-resources",
+                        "/swagger-resources/**",
+                        "/configuration/ui",
+                        "/configuration/security",
+                        "/swagger-ui/**",
+                        "/webjars/**",
+                        "/swagger-ui.html"
                 ).permitAll()
                         .requestMatchers(HttpMethod.POST,
                                 "api/critiques/*"

@@ -41,3 +41,7 @@ If you wish to see how it all looks, run the backend first either in the IDE wit
 ## Stopping the Application
 
 If you wish to stop the backend from running, just type `Ctrl+C` in the same command prompt where the backend is running. The same goes for the frontend - if you wish to stop the frontend from running, type `Ctrl+C` in the same command prompt where the frontend is running.
+
+## Available API routes
+
+If you wish to see the documentation of all available backend API routes, you can do so by running backend, and typing `http://localhost:8080/api/docs` in your browser of choise

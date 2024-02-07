@@ -159,7 +159,7 @@ public class TVShowService implements ITVShowService<TVShowRequestDTO> {
             List<ActingJDBC> actings = actingRepo.findAllByMediaId(id);
             return new ResponseEntity<>(actingTransformer.toTVShowActorResponseDTO(actings), HttpStatus.OK);
         }
-        throw new ResourceNotFoundException("No movie found with id: " + id);
+        throw new ResourceNotFoundException("No tv show found with id: " + id);
     }
 
     @Override
