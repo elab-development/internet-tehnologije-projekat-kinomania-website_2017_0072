@@ -22,7 +22,7 @@ Before you begin, ensure you have met the following requirements:
     - `spring.datasource.url`
     - `spring.datasource.username`
     - `spring.datasource.password`<br />  
-   Update these properties with the credentials of your production database in `application.properties`, and with your testing database in `application-test.properties`.
+   Update these properties with the credentials of your production database in `application.properties`, and with your testing database in `application-test.properties`. Additionaly do the same in pom.xml file of backend folder under build->plugins->plugin->configuration so flyway could now where to migrate the database.
 
 2. Position yourself in the `kinweb-backend` folder with the command prompt, and type `mvn flyway:migrate` to initialize the structure of your production database.
 
